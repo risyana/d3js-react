@@ -106,7 +106,8 @@ class MeteorStrike extends Component {
 
     render() {
         return (
-        <div>
+        <div >
+           <h3>Meteor Strikes Earth</h3>
            <div ref={tooltip => this.tooltip = tooltip}>
             </div>
             <svg ref={node => this.node = node}

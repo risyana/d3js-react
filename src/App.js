@@ -91,39 +91,84 @@ class App extends Component {
     return (
       <div className='container-fluid'>
 
-        {/* METEOR STRIKE */}
+        <h1>
+          Data Visualization Using D3.js (v.4) and Reactjs
+        </h1>
+
+        <hr/>
+
+        <h2>
+          Bar Chart
+        </h2>
+
+        {/* BARCHART*/}
         <div className='row'>
-          <div>
-            <h2>Meteor Strikes Earth</h2>
-            <MeteorStrike
-              data={this.state.data_meteor}
-              size={[1000, 500]} />
+          <div >
+            {<BarChart
+              data={this.state.data_barchart}
+              size={[450, 300]} />}
           </div>
         </div>
 
-        {/* HEAT MAP */}
-        <div className='row'>
-          <div>
-            {<HeatMap 
-              data={this.state.data_heatmap}
-              size={[900,300]}/>}
-          </div>  
-        </div>
+        <p>
+          API : {URL_BARCHART}
+        </p>
 
-        {/* BARCHART & SCATTERPLOT */}
+        <hr/>
+
+        <h2>
+          Scatter Plot
+        </h2>
+
+        {/*SCATTERPLOT */}
         <div className='row'>
-          <div className='col col-md-6' id="left">
-           {<BarChart 
-              data={this.state.data_barchart} 
-              size={[450, 300]} /> }
-          </div> 
-          <div className='col col-md-6' id="right">
-           { <ScatterPlot
+          <div >
+            {<ScatterPlot
               data={this.state.data_scatterplot}
               size={[450, 300]} />}
           </div>
         </div> 
 
+        <p>
+          API : {URL_SCATTERPLOT}
+        </p>
+
+        <hr/>
+
+        <h2>
+          Heat Map
+        </h2>
+
+        {/* HEAT MAP */}
+        <div className='row'>
+          <div>
+            {<HeatMap
+              data={this.state.data_heatmap}
+              size={[900, 300]} />}
+          </div>
+        </div>
+
+        <p>
+          API : {URL_HEATMAP}
+        </p>
+
+        <hr/>
+
+        <h2>
+          Geographical Visualization
+        </h2>
+
+        {/* METEOR STRIKE */}
+        <div className='row d3' style={{ width: 1030 }} >
+          <div>
+            <MeteorStrike
+              data={this.state.data_meteor}
+              size={[1000, 500]} />
+          </div>
+          <p>
+            API : {URL_METEOR}
+          </p>
+        </div>
 
       </div>
     )
